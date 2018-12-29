@@ -5,6 +5,10 @@ var todoModel = new Schema({
     task: {
         type: String,
         required: true
+    },
+    tag: {
+        type: Array,
+        required: optional
     }
 });
 // Export Contact model
