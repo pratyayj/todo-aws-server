@@ -22,6 +22,13 @@ router.route('/allTodos')
     })  
 })
 
+router.route('/showAll')
+.get((req, res) => {
+    Todo.find({}, (err, todos) => {
+        res.json(todos)
+    })  
+})
+
 router.route('/retrieve/:todoId')
 .get((req, res) => {
     Todo.findById(req.params.todoId, (err, todos) => {
