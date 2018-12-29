@@ -1,0 +1,23 @@
+{
+  "name": "todomongo",
+  "version": "1.0.0",
+  "description": "Backend for storing data for Flutter-based todo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "restful",
+    "json"
+  ],
+  "author": "Pratyay Jaidev",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-prettify": "^0.1.1",
+    "mongoose": "^5.3.15",
+    "morgan": "^1.9.1"
+  }
+}
