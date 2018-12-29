@@ -8,7 +8,7 @@ var todoModel = new Schema({
     },
     tag: {
         type: Array,
-        required: optional
+        required: false
     }
 });
 // Export Contact model
