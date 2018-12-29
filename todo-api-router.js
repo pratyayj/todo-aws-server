@@ -22,7 +22,7 @@ router.route('/allTodos')
     })  
 })
 
-router.route('/showAll')
+router.route('/showAllTodos')
 .get((req, res) => {
     Todo.find({}, (err, todos) => {
         res.json(todos)
