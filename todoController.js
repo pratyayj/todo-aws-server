@@ -34,7 +34,7 @@ res.json({
 };
 // Handle view contact info
 exports.view = function (req, res) {
-    Todo.findById(req.params.contact_id, function (err, todo) {
+    Todo.findById(req.params.todoId, function (err, todo) {
         if (err)
             res.send(err);
         res.json({
