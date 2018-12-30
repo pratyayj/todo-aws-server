@@ -8,3 +8,5 @@ var tagController = require('./tagController');
 // Using the controller to process the create Todo requests
 router.route('/createTag')
 .post(tagController.create)
+
+module.exports = router;
