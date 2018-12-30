@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 // Setup schema
 const Schema = mongoose.Schema;
 var tagModel = new Schema({
-    tag: {
-        tagName: String,
+    tagName: {
+        type: String,
         required: true
     }
 }, { collection: 'tags-collection'});
