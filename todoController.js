@@ -72,6 +72,7 @@ todo.name = req.body.task ? req.body.task : contact.task;
     });
 };
 
+/*
 // Handle delete Todo
 exports.delete = function (req, res) {
     Todo.remove({
@@ -86,3 +87,14 @@ exports.delete = function (req, res) {
         });
     });
 };
+*/
+
+exports.delete((req, res) => {
+    Todo.remove({
+        _id: req.params.todoId
+      }, function(err, todo) {
+        if (err)
+          res.status(404).send(err);
+        res.json({ message: 'todo successfully deleted' });
+      });
+})

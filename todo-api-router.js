@@ -66,6 +66,9 @@ router.route('/delete/:todoId')
 router.route('/delete/:todoId')
 .delete(todoController.delete)
 
+router.route('/getRid/:todoId')
+.delete(todoController.delete)
+
 // Using the controller to process the HTTP requests
 router.route('/display')
 .get(todoController.index)
