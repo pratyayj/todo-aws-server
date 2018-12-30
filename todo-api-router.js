@@ -22,17 +22,12 @@ router.route('/allTodos')
     })  
 })
 
-/*
 router.route('/retrieve/:todoId')
 .get((req, res) => {
     Todo.findById(req.params.todoId, (err, todos) => {
         res.json(todos)
     })  
 })
-*/
-
-router.route('/retrieve/:todoId')
-.get(todoController.view)
 
 router.route('/edit/:todoId')
 .put((req, res) => {
@@ -67,7 +62,7 @@ router.route('/delete/:todoId')
 .delete(todoController.delete)
 
 // Using the controller to process the HTTP requests
-router.route('/display')
+router.route('/displayAll')
 .get(todoController.index)
 
 // Export API routes
