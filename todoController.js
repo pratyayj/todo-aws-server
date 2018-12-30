@@ -33,6 +33,12 @@ res.json({
     });
 };
 
+exports.create = function (req, res) {
+    let todo = new Todo(req.body);
+    todo.save()
+    res.status(201).send(todo)
+}
+
 /*
 // Handle view contact info
 exports.view = function (req, res) {

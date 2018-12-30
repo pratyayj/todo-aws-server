@@ -38,12 +38,17 @@ router.route('/edit/:todoId')
     })
 })
 
+/*
 router.route('/createTodo')
 .post((req, res) => {
     let todo = new Todo(req.body);
     todo.save()
     res.status(201).send(todo)
 })
+*/
+
+router.route('/createTodo')
+.post(todoController.create)
 
 router.route('/delete/:todoId')
 .delete(todoController.delete)
