@@ -88,7 +88,10 @@ exports.edit = function(req, res) {
         todo.taskName = req.body.taskName;
         todo.tag = req.body.tag;
         todo.save()
-        res.json(todo)
+        res.status(200).json({
+            message: 'Todo edited successfully',
+            data: todo
+        })
     });
 };
 
