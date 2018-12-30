@@ -2,7 +2,7 @@
 Todo = require('./todoModel');
 
 // Handle index actions
-exports.index = function (req, res) {
+exports.displayAll = function (req, res) {
     Todo.get(function (err, todos) {
         if (err) {
             res.json({
@@ -14,21 +14,6 @@ exports.index = function (req, res) {
             status: "success",
             message: "Todos retrieved successfully",
             data: todos
-        });
-    });
-};
-
-// Handle create contact actions
-exports.new = function (req, res) {
-    var todo = new Todo();
-    todo.name = req.body.task ? req.body.task : task.name;
-// save the contact and check for errors
-    todo.save(function (err) {
-        // if (err)
-        //     res.json(err);
-res.json({
-            message: 'New todo created!',
-            data: todo
         });
     });
 };
@@ -63,25 +48,6 @@ router.retrieve = function (req, res) {
 });
 };
 */
-
-// Handle update contact info
-exports.update = function (req, res) {
-Todo.findById(req.params.contact_id, function (err, contact) {
-        if (err)
-            res.send(err);
-todo.name = req.body.task ? req.body.task : contact.task;
-
-// save the contact and check for errors
-        todo.save(function (err) {
-            if (err)
-                res.json(err);
-            res.json({
-                message: 'Contact Info updated',
-                todo: contact
-            });
-        });
-    });
-};
 
 exports.edit = function(req, res) {
     Todo.findById(req.params.todoId, (err, todo) => {

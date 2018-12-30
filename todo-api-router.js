@@ -40,7 +40,7 @@ router.route('/delete/:todoId')
 
 // Using the controller to process the HTTP requests
 router.route('/displayAll')
-.get(todoController.index)
+.get(todoController.displayAll)
 
 // Export API routes
 module.exports = router;
