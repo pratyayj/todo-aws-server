@@ -89,7 +89,7 @@ exports.delete = function (req, res) {
 };
 */
 
-exports.delete((req, res) => {
+exports.delete = function(req, res) {
     Todo.remove({
         _id: req.params.todoId
       }, function(err, todo) {
@@ -97,4 +97,4 @@ exports.delete((req, res) => {
           res.status(404).send(err);
         res.json({ message: 'todo successfully deleted' });
       });
-})
+};
