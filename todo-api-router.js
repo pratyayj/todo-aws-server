@@ -15,12 +15,17 @@ router.route('/')
      });
 })  
 
+/*
 router.route('/retrieve/:todoId')
 .get((req, res) => {
     Todo.findById(req.params.todoId, (err, todos) => {
         res.json(todos)
     })  
 })
+*/
+
+router.route('/retrieve/:todoId')
+.get(todoController.retrieveSingle)
 
 router.route('/edit/:todoId')
 .put(todoController.edit)

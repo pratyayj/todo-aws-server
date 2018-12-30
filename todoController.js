@@ -49,6 +49,12 @@ router.retrieve = function (req, res) {
 };
 */
 
+exports.retrieveSingle = function(req, res) {
+    Todo.findById(req.params.todoId, (err, todos) => {
+        res.json(todos)
+    }) 
+}
+
 exports.edit = function(req, res) {
     Todo.findById(req.params.todoId, (err, todo) => {
         todo.taskName = req.body.taskName;
