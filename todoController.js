@@ -36,8 +36,11 @@ res.json({
 exports.create = function (req, res) {
     let todo = new Todo(req.body);
     todo.save()
-    res.status(201).send(todo)
-}
+    res.status(201).json({
+        message: 'New todo created!',
+        data: todo
+    });
+};
 
 /*
 // Handle view contact info
