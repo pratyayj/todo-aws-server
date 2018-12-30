@@ -32,20 +32,12 @@ router.route('/retrieve/:todoId')
 router.route('/edit/:todoId')
 .put((req, res) => {
     Todo.findById(req.params.todoId, (err, todo) => {
-        todo.task = req.body.task;
+        todo.taskName = req.body.taskName;
+        todo.tag = req.body.tag;
         todo.save()
         res.json(todo)
     })
 })
-
-/*
-router.route('/createTodo')
-.post((req, res) => {
-    let todo = new Todo(req.body);
-    todo.save()
-    res.status(201).send(todo)
-})
-*/
 
 router.route('/createTodo')
 .post(todoController.create)
