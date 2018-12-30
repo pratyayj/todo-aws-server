@@ -45,19 +45,6 @@ router.route('/createTodo')
     res.status(201).send(todo)
 })
 
-/*
-router.route('/delete/:todoId')
-.delete((req, res) => {
-    Todo.remove({
-        _id: req.params.todoId
-      }, function(err, todo) {
-        if (err)
-          res.status(404).send(err);
-        res.json({ message: 'todo successfully deleted' });
-      });
-})
-*/
-
 router.route('/delete/:todoId')
 .delete(todoController.delete)
 
