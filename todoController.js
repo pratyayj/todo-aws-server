@@ -44,12 +44,20 @@ exports.view = function (req, res) {
     });
 };
 
+/*
 exports.retrieve = function (req, res) {
     Todo.get((req, res) => {
         Todo.findById(req.params.todoId, (err, todos) => {
             res.json(todos)
         });
     });
+};
+*/
+
+router.retrieve = function (req, res) {
+    Todo.findById(req.params.todoId, (err, todos) => {
+        res.json(todos)
+    });  
 };
 
 
