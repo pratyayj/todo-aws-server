@@ -10,7 +10,7 @@ var todoModel = new Schema({
         type: Array,
         required: false
     }
-});
+}, { collection: 'todos-collection'});
 // Export Contact model
 var Todo = module.exports = mongoose.model('todo', todoModel);
 module.exports.get = function (callback, limit) {
