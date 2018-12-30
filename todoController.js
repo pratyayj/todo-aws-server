@@ -17,6 +17,7 @@ exports.index = function (req, res) {
         });
     });
 };
+
 // Handle create contact actions
 exports.new = function (req, res) {
     var todo = new Todo();
@@ -42,6 +43,16 @@ exports.view = function (req, res) {
         });
     });
 };
+
+exports.retrieve = function (req, res) {
+    Todo.get((req, res) => {
+        Todo.findById(req.params.todoId, (err, todos) => {
+            res.json(todos)
+        });
+    });
+};
+
+
 // Handle update contact info
 exports.update = function (req, res) {
 Todo.findById(req.params.contact_id, function (err, contact) {
@@ -60,16 +71,18 @@ todo.name = req.body.task ? req.body.task : contact.task;
         });
     });
 };
-// Handle delete contact
+
+// Handle delete Todo
 exports.delete = function (req, res) {
     Todo.remove({
         _id: req.params.todo_id
     }, function (err, todo) {
         if (err)
-            res.send(err);
-res.json({
+            res.status(404).send(err);
+
+    res.json({
             status: "success",
-            message: 'Contact deleted'
+            message: 'Todo successfully deleted'
         });
     });
 };

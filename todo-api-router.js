@@ -22,19 +22,17 @@ router.route('/allTodos')
     })  
 })
 
-router.route('/showAllTodos')
-.get((req, res) => {
-    Todo.find({}, (err, todos) => {
-        res.json(todos)
-    })  
-})
-
+/*
 router.route('/retrieve/:todoId')
 .get((req, res) => {
     Todo.findById(req.params.todoId, (err, todos) => {
         res.json(todos)
     })  
 })
+*/
+
+router.route('/retrieve/:todoId')
+.get(todoController.retrieve)
 
 router.route('/edit/:todoId')
 .put((req, res) => {
@@ -52,6 +50,7 @@ router.route('/createTodo')
     res.status(201).send(todo)
 })
 
+/*
 router.route('/delete/:todoId')
 .delete((req, res) => {
     Todo.remove({
@@ -62,6 +61,10 @@ router.route('/delete/:todoId')
         res.json({ message: 'todo successfully deleted' });
       });
 })
+*/
+
+router.route('/delete/:todoId')
+.delete(todoController.delete)
 
 // Using the controller to process the HTTP requests
 router.route('/display')
