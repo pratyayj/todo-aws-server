@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 // Setup schema
 const Schema = mongoose.Schema;
 var todoModel = new Schema({
-    task: {
+    taskName: {
         type: String,
         required: true
     },

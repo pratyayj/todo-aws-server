@@ -19,7 +19,7 @@ var port = process.env.PORT || 8080;
 app.get('/', (req, res) => res.send('Hello World with Express'));
 
 // Connecting to mLab mongoDB
-mongoose.connect('mongodb://pratyayj:defaultAdmin1@ds111913.mlab.com:11913/flutter_todolist', ['todotasks']);
+mongoose.connect('mongodb://pratyayj:defaultAdmin1@ds111913.mlab.com:11913/flutter_todolist');
 var db = mongoose.connection;
 
 // Set up body parser to read body of HTML requests
