@@ -83,6 +83,15 @@ todo.name = req.body.task ? req.body.task : contact.task;
     });
 };
 
+exports.edit = function(req, res) {
+    Todo.findById(req.params.todoId, (err, todo) => {
+        todo.taskName = req.body.taskName;
+        todo.tag = req.body.tag;
+        todo.save()
+        res.json(todo)
+    });
+};
+
 exports.delete = function(req, res) {
     Todo.remove({
         _id: req.params.todoId
