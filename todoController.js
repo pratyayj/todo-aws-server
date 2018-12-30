@@ -32,6 +32,8 @@ res.json({
         });
     });
 };
+
+/*
 // Handle view contact info
 exports.view = function (req, res) {
     Todo.findById(req.params.todoId, function (err, todo) {
@@ -44,16 +46,6 @@ exports.view = function (req, res) {
     });
 };
 
-/*
-exports.retrieve = function (req, res) {
-    Todo.get((req, res) => {
-        Todo.findById(req.params.todoId, (err, todos) => {
-            res.json(todos)
-        });
-    });
-};
-*/
-
 router.retrieve = function (req, res) {
     Todo.get((req, res) => {
     Todo.findById(req.params.todoId, (err, todos) => {
@@ -61,7 +53,7 @@ router.retrieve = function (req, res) {
     });  
 });
 };
-
+*/
 
 // Handle update contact info
 exports.update = function (req, res) {
@@ -81,23 +73,6 @@ todo.name = req.body.task ? req.body.task : contact.task;
         });
     });
 };
-
-/*
-// Handle delete Todo
-exports.delete = function (req, res) {
-    Todo.remove({
-        _id: req.params.todo_id
-    }, function (err, todo) {
-        if (err)
-            res.status(404).send(err);
-
-    res.json({
-            status: "success",
-            message: 'Todo successfully deleted'
-        });
-    });
-};
-*/
 
 exports.delete = function(req, res) {
     Todo.remove({
