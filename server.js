@@ -4,6 +4,7 @@
 let express = require('express')
 // routes for API
 let todoApiRoutes = require("./todo-api-router.js")
+let tagApiRoutes = require("./tag-api-router.js")
 // Import Body-parser
 let bodyParser = require('body-parser');
 // Import Mongoose
@@ -35,6 +36,7 @@ app.set('json spaces', 2);
 
 // For /api based HTML requests use the routing
 app.use('/api', todoApiRoutes)
+app.use('/api', tagApiRoutes)
 
 // Launch app to listen to specified port
 app.listen(port, function () {
