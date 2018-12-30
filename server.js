@@ -35,8 +35,8 @@ app.use(pretty({query: 'pretty'}))
 app.set('json spaces', 2);
 
 // For /api based HTML requests use the routing
-app.use('/api/todo', todoApiRoutes)
-app.use('/api/tag', tagApiRoutes)
+app.use('/todoApi', todoApiRoutes)
+app.use('/tagApi', tagApiRoutes)
 
 // Launch app to listen to specified port
 app.listen(port, function () {
