@@ -15,28 +15,23 @@ router.route('/')
      });
 })  
 
-/*
-router.route('/retrieve/:todoId')
-.get((req, res) => {
-    Todo.findById(req.params.todoId, (err, todos) => {
-        res.json(todos)
-    })  
-})
-*/
-
+// Using the controller to process the retrieve Todo requests
 router.route('/retrieve/:todoId')
 .get(todoController.retrieveSingle)
 
+// Using the controller to process the edit Todo requests
 router.route('/edit/:todoId')
 .put(todoController.edit)
 
+// Using the controller to process the create Todo requests
 router.route('/createTodo')
 .post(todoController.create)
 
+// Using the controller to process delete Todo requests
 router.route('/delete/:todoId')
 .delete(todoController.delete)
 
-// Using the controller to process the HTTP requests
+// Using the controller to process the display all Todo requests
 router.route('/displayAll')
 .get(todoController.displayAll)
 
