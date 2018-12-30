@@ -1,10 +1,10 @@
-// Filename: todo-api-routes.js
+// Filename: todo-api-router.js
+
 // Initialize express router
 let router = require('express').Router();
 // Importing in the todo Model
 let Todo = require('./todoModel');
 // Import todo controller
-// Import contact controller
 var todoController = require('./todoController');
 
 // Default API response
@@ -16,11 +16,11 @@ router.route('/')
 })  
 
 // Using the controller to process the retrieve Todo requests
-router.route('/retrieve/:todoId')
+router.route('/retrieveTodo/:todoId')
 .get(todoController.retrieveSingle)
 
 // Using the controller to process the edit Todo requests
-router.route('/edit/:todoId')
+router.route('/editTodo/:todoId')
 .put(todoController.edit)
 
 // Using the controller to process the create Todo requests
@@ -28,11 +28,11 @@ router.route('/createTodo')
 .post(todoController.create)
 
 // Using the controller to process delete Todo requests
-router.route('/delete/:todoId')
+router.route('/deleteTodo/:todoId')
 .delete(todoController.delete)
 
 // Using the controller to process the display all Todo requests
-router.route('/displayAll')
+router.route('/displayAllTodo')
 .get(todoController.displayAll)
 
 // Export API routes
