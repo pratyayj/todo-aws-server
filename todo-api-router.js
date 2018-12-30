@@ -32,7 +32,7 @@ router.route('/retrieve/:todoId')
 */
 
 router.route('/retrieve/:todoId')
-.get(todoController.retrieve)
+.get(todoController.view)
 
 router.route('/edit/:todoId')
 .put((req, res) => {
