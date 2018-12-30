@@ -1,5 +1,5 @@
 // Import contact model
-Todo = require('./tagModel');
+Tag = require('./tagModel');
 
 exports.create = function (req, res) {
     let tag = new Tag(req.body);
