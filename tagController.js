@@ -20,7 +20,7 @@ exports.displayAll = function (req, res) {
         }
         res.json({
             status: "success",
-            message: "Todos retrieved successfully",
+            message: "Tags retrieved successfully",
             data: tags
         });
     });
