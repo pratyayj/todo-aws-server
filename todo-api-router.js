@@ -7,13 +7,17 @@ let Todo = require('./todoModel');
 // Import todo controller
 var todoController = require('./todoController');
 
+
 // Default API response
 router.route('/')
 .get((req, res) => {
     res.status(200).json({
         message: 'Welcome to Flutter ToDo API crafted with love!',
      });
-})  
+})
+
+router.route('/sortByTag/:name')
+.get(todoController.sort)
 
 // Using the controller to process the retrieve Todo requests
 router.route('/retrieveTodo/:todoId')

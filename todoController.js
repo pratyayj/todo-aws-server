@@ -1,6 +1,10 @@
 // Import contact model
 Todo = require('./todoModel');
 
+// To connect to the MongoDB
+var mongodb = require('mongodb').MongoClient;
+var mongodbUrl = "mongodb://pratyayj:defaultAdmin1@ds111913.mlab.com:11913/flutter_todolist";
+
 // Handle display all Todo
 exports.displayAll = function (req, res) {
     Todo.get(function (err, todos) {
@@ -53,4 +57,17 @@ exports.delete = function(req, res) {
           res.status(404).send(err);
         res.json({ message: 'todo successfully deleted' });
       });
+};
+
+exports.sort = function(req, res) {
+    mongodb.connect(mongodbUrl, function (err, client) {
+        var db = client.db('flutter_todolist');
+
+        db.collection('todos-collection').find({ tag: { $in: [req.params.name]}}).toArray(function(err, result) {
+            console.log(result);
+            res.json({
+                message: result
+            });
+        });
+    });
 };
