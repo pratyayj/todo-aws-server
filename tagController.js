@@ -9,3 +9,19 @@ exports.create = function (req, res) {
         data: tag
     });
 };
+
+exports.displayAll = function (req, res) {
+    Tag.get(function (err, tags) {
+        if (err) {
+            res.json({
+                status: "error",
+                message: err,
+            });
+        }
+        res.json({
+            status: "success",
+            message: "Todos retrieved successfully",
+            data: tags
+        });
+    });
+};

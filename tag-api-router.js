@@ -5,8 +5,12 @@ let Tag = require('./tagModel');
 // Import todo controller
 var tagController = require('./tagController');
 
-// Using the controller to process the create Todo requests
+// Using the controller to process the create Tag
 router.route('/createTag')
 .post(tagController.create)
+
+// Using the controller to process display tags request
+router.route('/displayAllTags')
+.post(tagController.displayAll)
 
 module.exports = router;
