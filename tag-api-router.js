@@ -11,6 +11,6 @@ router.route('/createTag')
 
 // Using the controller to process display tags request
 router.route('/displayAllTags')
-.post(tagController.displayAll)
+.get(tagController.displayAll)
 
 module.exports = router;
