@@ -24,7 +24,7 @@ exports.displayAll = function (req, res) {
 
 exports.create = function (req, res) {
     let todo = new Todo(req.body);
-    todo.save()
+    todo.save();
     res.status(201).json({
         message: 'New todo created!',
         data: todo
@@ -33,19 +33,19 @@ exports.create = function (req, res) {
 
 exports.retrieveSingle = function(req, res) {
     Todo.findById(req.params.todoId, (err, todos) => {
-        res.json(todos)
-    }) 
-}
+        res.json(todos);
+    });
+};
 
 exports.edit = function(req, res) {
     Todo.findById(req.params.todoId, (err, todo) => {
         todo.taskName = req.body.taskName;
         todo.tag = req.body.tag;
-        todo.save()
+        todo.save();
         res.status(200).json({
             message: 'Todo edited successfully',
             data: todo
-        })
+        });
     });
 };
 

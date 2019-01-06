@@ -15,4 +15,4 @@ var todoModel = new Schema({
 var Todo = module.exports = mongoose.model('todo', todoModel);
 module.exports.get = function (callback, limit) {
     Todo.find(callback).limit(limit);
-}
+};

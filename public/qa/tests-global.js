@@ -8,5 +8,5 @@ suite('Global Tests', function(){
 suite('API link', function() {
     test('link to API exists', function() {
         assert($('a[href="/api"]').length);
-    })
-})
+    });
+});

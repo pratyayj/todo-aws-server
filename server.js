@@ -1,12 +1,12 @@
 // FileName: index.js
 
 // express-handlebars
-let handlebars = require('express-handlebars')
+let handlebars = require('express-handlebars');
 // Import express
-let express = require('express')
+let express = require('express');
 // routes for API
-let todoApiRoutes = require("./todo-api-router.js")
-let tagApiRoutes = require("./tag-api-router.js")
+let todoApiRoutes = require("./todo-api-router.js");
+let tagApiRoutes = require("./tag-api-router.js");
 // Import Body-parser
 let bodyParser = require('body-parser');
 // Import Mongoose
@@ -44,13 +44,13 @@ app.use(function(req, res, next){
     next();
 });
 
-var message = require('./lib/message.js')
+var message = require('./lib/message.js');
 app.get('/', (req, res) => 
     res.render('home', {message: message.getRandomMessage()})
 );
 // For /api based HTML requests use the routing
-app.use('/api', todoApiRoutes)
-app.use('/api', tagApiRoutes)
+app.use('/api', todoApiRoutes);
+app.use('/api', tagApiRoutes);
 
 // Launch app to listen to specified port
 app.listen(port, function () {
